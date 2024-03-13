@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Inria Sans", sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction:row; /* Alterado para coluna em dispositivos pequenos */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    background-color: #FCDA75;
+    padding: 20px; 
+}
+
+.header img {
+    height: auto;
+    width: 195px;
+    margin-left: 50%;
+}
+
+.header ul {
+    display: flex;
+    font-size: 21px;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 40%;
+}
+
+.header ul li {
+    word-spacing: 10px;
+    transition: all 200ms;
+    position: relative;
+}
+
+.header ul li::after {
+   content: ''; 
+   position: absolute; 
+   left: 0; 
+   bottom: -3px; 
+   width: 100%; 
+   height: 2px; 
+   background-color: black; 
+   transform: scaleX(0); 
+   transition: transform 0.3s ease; 
+}
+
+.header ul li:hover::after {
+   transform: scaleX(1);
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header aside {
+    display: flex;
+    gap: 10px;
+    margin-left: 10%;
+    transition: all 200ms ease-in;
+}
+
+.header aside a {
+    color: white;
+    background-color: #BA2D2D;
+    text-align: center;
+    border-radius: 50px;
+    padding: 20px;
+    transition: all 200ms ease-in;
+    box-shadow: rgba(39, 39, 39, 0.5) 3px 6px 10px;
+}
+
+.header aside a:hover{
+   background-color: #df4141;
+}
+
+
+@media screen and (max-width: 768px) {
+   .header {
+       flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
+       align-items: center; /* Centraliza conteúdo verticalmente */
+   }
+
+   .header ul {
+       margin-left: 0; /* Remove a margem esquerda */
+   }
+
+   .header aside {
+       margin-left: 0; /* Remove a margem esquerda */
+   }
+}
